@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class GunScript : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class GunScript : MonoBehaviour
 
     float nextTimeToFire = 0f;
 
+    //public AudioSource sfx;
+    //public AudioClip clip;
+
+    public AudioSource audioSource;
+    public AudioClip audioClipArray;
+
     // Update is called once per frame
     void Update(){
 
@@ -20,10 +27,14 @@ public class GunScript : MonoBehaviour
         }
     }
 
+    AudioClip RandomClip(){
+        return audioClipArray;
+    }
+
     void Shoot(){
 
-        //muzzleFlash.Play();        
-
+        //muzzleFlash.Play();      
+        audioSource.PlayOneShot(RandomClip());
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)){
             Debug.Log(hit.transform.name);
@@ -33,9 +44,8 @@ public class GunScript : MonoBehaviour
             if(target != null){
                 target.TakeDamage(damage);
             }
-
-
-
-        }
+        }       
     }
+       
+       
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class WeaponSwitching : MonoBehaviour
 {
     public int selectedWeapon = 0;
-    KeyCode[] Keycodes = { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3 };
+    [SerializeField]
+    KeyCode[] Keycodes;
 
     private void Start(){
         SelectedWeapon();
