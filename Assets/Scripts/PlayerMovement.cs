@@ -89,12 +89,13 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         //When to jump
-        if (Input.GetKey(jumpKey) && readyToJump && isGrounded)
-        {
-            readyToJump = false;
-            Jump();
-            Invoke(nameof(ResetJump), jumpCoolDown);
-        }
+        //if (Input.GetKey(jumpKey) && readyToJump && isGrounded)
+        //{
+        //    readyToJump = false;
+        //    Jump();
+        
+        //Invoke(nameof(ResetJump), jumpCoolDown);
+        //}
 
         //Start Crouch
         if (Input.GetKeyDown(crouchKey))
