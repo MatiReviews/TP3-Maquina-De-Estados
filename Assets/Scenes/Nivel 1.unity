@@ -782,10 +782,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 1
-  fireRate: 15
+  fireRate: 7.85
   fpsCam: {fileID: 579038259}
   audioSource: {fileID: 2007392328}
-  audioClipArray: {fileID: 8300000, guid: 4bb875b1fb511194d82582f2bdb5bcee, type: 3}
+  audioClipArray: {fileID: 8300000, guid: 960c90adec02551479dfcc78a775abe7, type: 3}
 --- !u!1 &649606406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1078,6 @@ GameObject:
   - component: {fileID: 859899763}
   - component: {fileID: 859899762}
   - component: {fileID: 859899761}
-  - component: {fileID: 859899766}
   m_Layer: 7
   m_Name: Stair
   m_TagString: Untagged
@@ -2223,19 +2222,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &859899766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859899760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5512d171b02c3574aa27fbb14f1bc83e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
 --- !u!1 &1012731191
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,7 +2264,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4804369671470572350, guid: 1659420d9e190f94e92c32e41ed39728, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 47b12161bc0cacc49a4ce628e4a82360, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a4c166477333b574da199634eb90cb2e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2896,10 +2882,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 35
   range: 40
-  fireRate: 1
+  fireRate: 0.8
   fpsCam: {fileID: 579038259}
   audioSource: {fileID: 1012731193}
-  audioClipArray: {fileID: 8300000, guid: 47b12161bc0cacc49a4ce628e4a82360, type: 3}
+  audioClipArray: {fileID: 8300000, guid: a4c166477333b574da199634eb90cb2e, type: 3}
 --- !u!1 &1063745270
 GameObject:
   m_ObjectHideFlags: 0
@@ -3181,37 +3167,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269632784}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1330549203
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1330549204}
-  m_Layer: 0
-  m_Name: -----Weapon-----
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1330549204
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330549203}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.715788, y: 0.6721849, z: 11.892078}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &1349027164
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -3274,6 +3229,37 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
+--- !u!1 &1447348278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1447348279}
+  m_Layer: 0
+  m_Name: ----xD-----
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1447348279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447348278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.020185, y: 4.5594325, z: 14.802994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1927272649
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,7 +3451,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4804369671470572350, guid: 1659420d9e190f94e92c32e41ed39728, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4bb875b1fb511194d82582f2bdb5bcee, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

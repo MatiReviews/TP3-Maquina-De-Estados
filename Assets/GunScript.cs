@@ -12,9 +12,6 @@ public class GunScript : MonoBehaviour
 
     float nextTimeToFire = 0f;
 
-    //public AudioSource sfx;
-    //public AudioClip clip;
-
     public AudioSource audioSource;
     public AudioClip audioClipArray;
 
@@ -39,7 +36,7 @@ public class GunScript : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)){
             Debug.Log(hit.transform.name);
 
-            Target target = hit.transform.GetComponent<Target>();
+            EnemyScript target = hit.transform.GetComponent<EnemyScript>();
 
             if(target != null){
                 target.TakeDamage(damage);

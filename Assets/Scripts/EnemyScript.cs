@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    [SerializeField]
+    float health;
 
     enum States{
         idle,
@@ -13,18 +15,19 @@ public class EnemyScript : MonoBehaviour
         die
     }
 
-    // Start is called before the first frame update
-    void Start()
+
+    public void TakeDamage(float damageTaken)
     {
-        
+        health -= damageTaken;
+        if (health <= 0f){
+            Die();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Die(){
+        Destroy(gameObject);
     }
 
-    //velocity == 0 -> idle
+
 
 }
