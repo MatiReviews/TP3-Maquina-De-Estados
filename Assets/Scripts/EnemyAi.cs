@@ -28,6 +28,23 @@ public class EnemyAi : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, Player);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, Player);
+
+        if (!playerInSightRange && !playerInAttackRange) Patrolling();
+        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (playerInAttackRange && playerInSightRange) AttackPlayer();
+    }
+
     private void Patrolling(){
         if (!walkPointSet) SearchWalkPoint();
 
@@ -48,14 +65,13 @@ public class EnemyAi : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if(Physics.Raycast(walkPoint, -transform.up, 2f, Ground))
-        {
+        if(Physics.Raycast(walkPoint, -transform.up, 2f, Ground)){
             walkPointSet = true;
         }
     }
 
     private void ChasePlayer(){
-        agent.SetDestination(player.position);
+        agent.SetDestination(player.position);        
     }
 
     private void AttackPlayer(){
@@ -64,39 +80,22 @@ public class EnemyAi : MonoBehaviour
 
         transform.LookAt(player);
 
-        if (!alreadyAttacked)
-        {
+        if (!alreadyAttacked && playerInAttackRange){
 
             Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
 
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);            
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
 
-    void ResetAttack()
-    {
+    void ResetAttack(){
         alreadyAttacked = false;
     }
 
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, Player);
-        playerInSightRange = Physics.CheckSphere(transform.position, attackRange, Player);
-
-        if (!playerInSightRange && playerInAttackRange) Patrolling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInSightRange && playerInAttackRange) AttackPlayer();
-    }
 }
