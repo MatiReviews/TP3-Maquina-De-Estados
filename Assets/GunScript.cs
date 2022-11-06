@@ -3,16 +3,19 @@ using UnityEngine;
 public class GunScript : MonoBehaviour
 {
     public float damage = 10f;
-    public float range = 100f;
+    public float range = 1f;
+    public float fireRate = 15f;
 
     public Camera fpsCam;
-    //public ParticleSystem muzzleFlash;    
+    //public ParticleSystem muzzleFlash;
+
+    float nextTimeToFire = 0f;
 
     // Update is called once per frame
     void Update(){
 
-        if (Input.GetButtonDown("Fire1")){
-
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire){
+            nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
     }
@@ -22,8 +25,7 @@ public class GunScript : MonoBehaviour
         //muzzleFlash.Play();        
 
         RaycastHit hit;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-        {
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)){
             Debug.Log(hit.transform.name);
 
             Target target = hit.transform.GetComponent<Target>();
@@ -31,6 +33,9 @@ public class GunScript : MonoBehaviour
             if(target != null){
                 target.TakeDamage(damage);
             }
+
+
+
         }
     }
 }
