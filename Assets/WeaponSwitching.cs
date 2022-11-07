@@ -51,4 +51,7 @@ public class WeaponSwitching : MonoBehaviour
         }
     }
 
+    public int GetSelectedWeapon(){
+        return selectedWeapon;
+    }
 }
