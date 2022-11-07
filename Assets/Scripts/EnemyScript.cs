@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     [SerializeField]
-    float health;
+    private float health;
 
     [SerializeField]
-    float bulletDamage;
+    private float bulletDamage;
 
     enum States {
         idle,

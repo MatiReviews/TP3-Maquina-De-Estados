@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Bullet-Red
+  - Bullet-Blue
+  - Bullet-Green
   - Proyectil
   layers:
   - Default

@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //[SerializeField]
+    [SerializeField]
     static float health;
 
     public static bool isGameOver;
     bool isDead;
 
-    //public TextMeshProUGUI playerHPText;
+    public TextMeshProUGUI playerHPText;
 
     // Start is called before the first frame update
     void Start(){
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update(){
        Debug.Log("Health: " + GetHealth());
-        //playerHPText.text = "+" + GetHealth();
+        playerHPText.text =  GetHealth().ToString();
         if (isGameOver){
 
         }
@@ -40,7 +40,5 @@ public class Player : MonoBehaviour
         if(health <= 0f){
             isGameOver = true;
         }
-    }   
-
-    
+    }    
 }
