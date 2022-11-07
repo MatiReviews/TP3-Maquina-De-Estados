@@ -7,18 +7,6 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     private float health;
 
-    [SerializeField]
-    private float bulletDamage;
-
-    enum States {
-        idle,
-        walking,
-        patroll,
-        attack,
-        die
-    }
-
-
     public void TakeDamage(float damageTaken)
     {
         health -= damageTaken;
@@ -26,11 +14,7 @@ public class EnemyScript : MonoBehaviour
             Die();
         }
     }
-
-    public float DealDamage(){
-        return bulletDamage;
-    }
-
+  
     void Die(){
         Destroy(gameObject);
     }
