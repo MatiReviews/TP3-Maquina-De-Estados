@@ -114,8 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7296e96e0c47aa44b9f73ed44e8c989b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  bulletDamage: 0
+  health: 85
 --- !u!114 &4750080969668608835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,8 +139,8 @@ MonoBehaviour:
   walkPointRange: 5
   timeBetweenAttacks: 0.5
   projectile: {fileID: 2174761744496573549, guid: 2fbbcf1ce6c31d34caff51ea5548d577, type: 3}
-  sightRange: 20
-  attackRange: 10
+  sightRange: 55
+  attackRange: 20
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!195 &4750080969668608832
@@ -154,7 +153,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 11
+  m_Speed: 17
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

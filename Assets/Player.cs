@@ -7,15 +7,18 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     static float health;
+    static float oldHealth;
 
     public static bool isGameOver;
     bool isDead;
 
     public TextMeshProUGUI playerHPText;
 
+
     // Start is called before the first frame update
     void Start(){
         health = 200;
+        oldHealth = 200;
         isGameOver = false;
     }
 
@@ -40,5 +43,5 @@ public class Player : MonoBehaviour
         if(health <= 0f){
             isGameOver = true;
         }
-    }    
+    }
 }

@@ -18,8 +18,4 @@ public class EnemyScript : MonoBehaviour
     void Die(){
         Destroy(gameObject);
     }
-
-
-
-
 }

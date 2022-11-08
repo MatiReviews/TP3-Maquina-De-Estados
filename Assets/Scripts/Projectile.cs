@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : EnemyScript
 { 
-    static float damage;
+    static float damage;  
 
     private void Start()
     {
@@ -31,7 +31,7 @@ public class Projectile : EnemyScript
     {
         if (collision.collider.tag == "Player")
         {
-            Player.TakeDamage(damage);
+            Player.TakeDamage(damage);         
             Destroy(gameObject);
         }                   
         
