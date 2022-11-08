@@ -52,4 +52,10 @@ public class Player : MonoBehaviour
             isGameOver = true;
         }
     }
+
+    private void OnTriggerEnter(Collider other){
+        if(other.tag == "OutOfBounds"){
+            myPlayerSound.FallingSound();
+        }
+    }
 }
