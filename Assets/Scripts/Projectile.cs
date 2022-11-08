@@ -4,37 +4,32 @@ using UnityEngine;
 
 public class Projectile : EnemyScript
 { 
-    static float damage;  
+    static float damage;
 
-    private void Start()
-    {
+    private void Start(){
         check();
     }
 
-    void check()
-    {
-        if(gameObject.tag == "Bullet-Red")
-        {
+    void check(){
+        if(gameObject.tag == "Bullet-Red"){
             damage = 10f;
         }
-        else if (gameObject.tag == "Bullet-Blue")
-        {
+        else if (gameObject.tag == "Bullet-Blue"){
             damage = 20f;
         }
-        else if (gameObject.tag == "Bullet-Green")
-        {
+        else if (gameObject.tag == "Bullet-Green"){
             damage = 25f;
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Player")
-        {
-            Player.TakeDamage(damage);         
+    private void OnCollisionEnter(Collision collision){
+        if (collision.collider.tag == "Player"){
+            Player.TakeDamage(damage);           
             Destroy(gameObject);
         }                   
         
         Destroy(gameObject,1f);
     }
+
+
 }

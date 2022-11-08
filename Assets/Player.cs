@@ -14,12 +14,15 @@ public class Player : MonoBehaviour
 
     public TextMeshProUGUI playerHPText;
 
+    PlayerSound myPlayerSound;
+
 
     // Start is called before the first frame update
     void Start(){
         health = 200;
         oldHealth = 200;
         isGameOver = false;
+        myPlayerSound = GetComponent<PlayerSound>();
     }
 
     // Update is called once per frame
@@ -28,6 +31,11 @@ public class Player : MonoBehaviour
         playerHPText.text =  GetHealth().ToString();
         if (isGameOver){
 
+        }
+
+        if (health != oldHealth){
+            oldHealth = health;
+            myPlayerSound.DamageSound();
         }
     }
 

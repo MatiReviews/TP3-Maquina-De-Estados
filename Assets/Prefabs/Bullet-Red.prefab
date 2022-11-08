@@ -128,4 +128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  bulletDamage: 0
+  audioClips:
+  - {fileID: 8300000, guid: 4b7772119f4675a45b9d21ff7713c9b9, type: 3}
+  - {fileID: 8300000, guid: e88be5f1733f06a4890bffb890d21fc8, type: 3}
+  - {fileID: 8300000, guid: 82f990e8c90b89249bf50d56e92734e9, type: 3}
+  - {fileID: 8300000, guid: 953a62187ba63fc47ac8785d5c2d3b3c, type: 3}
+  - {fileID: 8300000, guid: f7d6e30d585d0d845acc1f84e4ad91ae, type: 3}
+  - {fileID: 8300000, guid: c0300c1a7f6022e46b4d86c40bd32ed6, type: 3}
